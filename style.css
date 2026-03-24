@@ -1,0 +1,139 @@
+:root {
+    --board: #3F3F74;
+    --wall: #7281A3;
+    --wall-light: #CED4E7;
+    --wood-dark: #754331;
+    --wood-light: #B5754E;
+    --gold: #D9A066;
+    --floor: #EBC49F;
+    --accent: #5B6EE1;
+    --accent-light: #7B8EF5;
+    --red: #BE2633;
+    --white: #FFFFFF;
+}
+
+body {
+    background: linear-gradient(135deg, var(--wall-light) 0%, #B8C2DB 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.header-bar {
+    background: linear-gradient(135deg, var(--board) 0%, #55558A 100%);
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(63, 63, 116, 0.4);
+    border: 3px solid var(--gold);
+}
+
+.header-bar h1 {
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-bar .subtitle {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(217, 160, 102, 0.4);
+    color: var(--wall-light);
+}
+
+.canvas-container {
+    box-shadow: 0 8px 24px rgba(63, 63, 116, 0.25);
+    border-radius: 4px;
+    background-color: var(--wall-light);
+    padding: 0.5rem;
+    position: relative;
+    border: 3px solid var(--wall);
+}
+
+canvas {
+    border-radius: 2px;
+    background-color: var(--floor);
+    cursor: crosshair;
+    display: block;
+}
+
+#tooltip {
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.signs-panel {
+    background: var(--white);
+    border: 3px solid var(--wall);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(63, 63, 116, 0.15);
+}
+
+.sign-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--board);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 0.5rem 0.35rem 0.75rem;
+    border-radius: 2px;
+    border: 2px solid var(--wall);
+    border-top: 2px solid var(--gold);
+    transition: background 0.2s;
+    cursor: default;
+}
+
+.sign-chip:hover {
+    background: var(--accent);
+    border-color: var(--accent-light);
+}
+
+.sign-chip .edit-btn {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.15s;
+    font-size: 0.7rem;
+}
+
+.sign-chip .edit-btn:hover {
+    opacity: 1;
+}
+
+.sign-chip .remove-btn {
+    cursor: pointer;
+    background: var(--red);
+    border: none;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.15s;
+}
+
+.sign-chip .remove-btn:hover {
+    background: #D94452;
+}
+
+.legend-box {
+    background: var(--white);
+    border: 3px solid var(--wall);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(63, 63, 116, 0.1);
+}
+
+.school-badge {
+    background: var(--red);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid #8A1A26;
+}

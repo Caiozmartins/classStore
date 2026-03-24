@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Classroom - Casa Thomas Jefferson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center py-10">
+
+    <div class="max-w-5xl w-full px-4 flex flex-col items-center">
+        <!-- Header com branding CTJ -->
+        <div class="header-bar text-center mb-6 w-full max-w-3xl">
+            <div class="flex items-center justify-center gap-3 mb-2">
+                <h1 class="text-3xl font-extrabold tracking-tight">English Classroom: Store Layout</h1>
+                <span class="school-badge">CTJ</span>
+            </div>
+            <p class="subtitle px-4 py-2 rounded-full inline-block text-sm font-medium">
+                Click the student to move and drag the tags to label the sections!
+            </p>
+        </div>
+
+        <!-- Canvas com Tooltip -->
+        <div class="canvas-container">
+            <canvas id="classroomCanvas" width="541" height="471"></canvas>
+
+            <div id="tooltip" class="absolute opacity-0 bg-[#3F3F74] text-white font-semibold text-xs px-3 py-1.5 rounded transform -translate-x-1/2 -translate-y-full mt-[-15px] shadow-lg flex items-center gap-2 z-10 border border-[#7281A3]">
+                <span id="tooltip-icon"></span>
+                <span id="tooltip-text">Tooltip</span>
+            </div>
+        </div>
+
+        <!-- Painel de Plaquinhas -->
+        <div class="signs-panel mt-8 w-full max-w-3xl p-5 rounded-xl">
+            <div class="flex items-center justify-between mb-3">
+                <h2 class="text-sm font-bold text-[#3F3F74] uppercase tracking-wide">Plaquinhas</h2>
+                <div class="flex gap-2">
+                    <input id="newSignInput" type="text" placeholder="Ex: Near the door" maxlength="20"
+                        class="text-sm px-3 py-1.5 rounded border-2 border-[#CED4E7] focus:border-[#5B6EE1] focus:outline-none w-44 font-medium text-[#3F3F74] placeholder:text-[#7281A3]/50">
+                    <button id="addSignBtn"
+                        class="text-sm font-bold px-4 py-1.5 rounded bg-[#3F3F74] text-white hover:bg-[#5B6EE1] transition-colors border-2 border-[#7281A3]">
+                        + Adicionar
+                    </button>
+                </div>
+            </div>
+            <div id="signsList" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Legenda -->
+        <div class="legend-box mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-medium text-[#3F3F74] w-full max-w-3xl p-5 rounded">
+            <div class="flex items-center gap-3"><div class="w-5 h-5 bg-[#BE2633] rounded-sm border-t-2 border-t-[#D94452] border border-[#8A1A26]"></div> Mesas (Grupos)</div>
+            <div class="flex items-center gap-3"><div class="w-5 h-5 bg-[#BE2633] rounded-sm border-t-2 border-t-[#D94452] border border-[#8A1A26]"></div> Mesa Teacher</div>
+            <div class="flex items-center gap-3"><div class="w-5 h-5 bg-[#3F3F74] rounded-sm border-2 border-[#D9A066]"></div> Lousa / Quadro</div>
+            <div class="flex items-center gap-3">
+                <div class="w-5 h-5 bg-[#5B6EE1] rounded-full border border-[#3F3F74]"></div>
+                Aluno
+            </div>
+            <div class="flex items-center gap-3"><div class="w-8 h-5 bg-[#3F3F74] rounded-sm border border-[#7281A3] border-t-2 border-t-[#D9A066] flex items-center justify-center text-[8px] font-bold text-white">TAG</div> Plaquinhas</div>
+        </div>
+
+        <p class="mt-4 text-xs text-[#7281A3] font-medium">Casa Thomas Jefferson</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
